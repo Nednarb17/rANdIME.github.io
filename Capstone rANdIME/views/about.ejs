@@ -1,0 +1,79 @@
+<%- include("partials/head.ejs") %>
+
+<div class="about">
+  <%- include("partials/header.ejs") %>
+  <div class="container">
+    <div class="row">
+      <!-- "About / Instructions" header with border and consistent width -->
+      <div class="col-12 text-center mb-3">
+        <h1 style="border-bottom: 2px solid black; margin: 9px 0px; padding-bottom: 2px; font-size: 36px;">About / Instructions</h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center text-center">
+      <div class="col-12">
+        <h2 style="font-size: 40px; font-weight: 700;">
+          r<span style="color: #c57194;">A</span><span style="color: #8e92df;">N</span><span style="font-size: 33px;">d</span><span style="color: #87c2da;">I</span><span style="color: #c6dd1a;">M</span><span style="color: #72c9a9;">E</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- About Content Section with Border -->
+    <div class="custom-border p-3 mt-3">
+      <p style="font-weight: 500; text-align: justify; font-size: 18px;">
+        <strong>"rANdIME"</strong> is a random anime / recommendation generator powered by the Jikan API. How it works is simple!
+      </p>
+      <p style="font-size: 18px;">There are three main functions, each working independently:</p>
+
+      <ol class="list-group-numbered" style="font-size: 18px;">
+        <li class="list-group-item" style="padding-bottom: 10px;">
+          <strong>Button Selection</strong> - The homepage features various buttons that you can mix and match however you like. Once you're satisfied, hit the <strong>"Let's Go"</strong> button in the center of the page to receive your anime recommendation. Yaaay!
+        </li>
+        <li class="list-group-item" style="padding-bottom: 10px;">
+          <strong>Search Bar</strong> - Enter the name of an anime you love or enjoy, and the generator will recommend similar anime based on your input.
+        </li>
+        <li class="list-group-item" style="padding-bottom: 10px;">
+          <strong>Random Anime Button</strong> - This option, you guessed it gives you a completely random anime. However, be warned—it could be anything, from a kids show to <em>hentai</em> (unfortunately) and everything in between.
+        </li>
+      </ol>
+
+      <p style="font-size: 18px;">If you don't select any options, the generator will still give you a random anime so be careful!</p>
+
+      <p style="font-size: 18px;">
+        On the anime result page, you can click on the <strong>cute Kirby</strong> at the bottom of the page to get another result using the same entered information. Alternatively, you can simply press <strong>F5</strong> to reload the page and receive a new anime recommendation.
+      </p>
+
+      <p style="font-size: 18px;">
+        You can now go discover the hottest Boys Love anime from the 1950s, so what are you waiting for?
+      </p>
+    </div>
+
+    <!-- Contact Section with Border -->
+    <div class="custom-border p-3 mt-4 mb-4" class="nobtm">
+      <h2 class="mb-3" style="font-size: 28px; ">Contact</h2>
+      <p style="font-size: 18px;">
+        If you encounter any issues or have any inquiries, feel free to reach out via email at
+        <a href="mailto:brandenlove17@gmail.com" style="text-decoration: none; font-size: 18px;">brandenlove17@gmail.com</a>
+      </p>
+  </div>
+ </div>
+
+ <footer style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px 0; width: 100%; background-color: #222; color: white;">
+  <p style="margin-bottom: 10px; font-weight: 200;">&copy; <span id="current-year"></span> rANdIME. All Rights Reserved.</p>
+  
+  <nav style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+      <a  href="/" class="bottomhalf" style="color: #FF6680; text-decoration: none; font-size: 20px; margin:0px 15px">rANdIME</a>
+      <a href="/about" style="color: #6fd1ad; text-decoration: none; font-size: 16px;margin:0px 15px">About/Instructions</a>
+      <a href="/about" style="color: #676de2; text-decoration: none; font-size: 16px;margin:0px 15px">Contact</a>
+      
+      <!-- Random Anime Button aligned with other links -->
+      <form action="/results" method="POST" style="display: inline;">
+          <button type="submit" name="randomButton" value="true" class="btn btn-secondary btn-lg randombottom" style="background: none; border: none; color: #c2d62c; font-size: 16px; padding: 0; cursor: pointer;">
+              Random
+          </button>
+      </form>
+  </nav>
+</footer>
+</div>
+
+<%- include("partials/footer.ejs") %> 

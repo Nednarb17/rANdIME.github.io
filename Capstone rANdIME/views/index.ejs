@@ -1,0 +1,276 @@
+
+<%- include("partials/head.ejs") %>
+
+  <video autoplay loop muted playsinline id="background-video" >
+    <source src="./images/jolyne-kuujou-jojos-bizarre-adventure.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>                   
+<%- include("partials/header.ejs") %>
+
+    <form action="/results" id="myform" method="post">
+        <div class="containerall">
+            <div class="row" style="height: 5vh;"> </div>           
+            <div class="row d-flex justify-content-center align-items-center" style="height: 15vh; width: 100vw;"> 
+                <% if (typeof error !== "undefined" && error) { %>
+                    <div id="errorAlert" class="col-8 col-md-6 col-lg-4 alert alert-danger alert-dismissible fade show text-center shadow-lg" role="alert">
+                        <strong>Erm:</strong> <%= error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    
+                    <% } %>
+                </div>
+
+                <div class="container  " style="margin: 0;">
+                    <div class="row "> 
+                        <div class=" text-center mt-3 d-flex flex-sm-row flex-column justify-content-evenly gap3 "> <!-- Adjusts column width -->
+                            
+                            <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle-split" type="button" id="genreDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      Genres
+                  </button>
+                  <ul class="dropdown-menu genre-dropdown-menu p-3" aria-labelledby="genreDropdownButton">
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Action"> Action</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Adventure"> Adventure</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="AvantGarde"> Avant Garde</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="AwardWinning"> Award Winning</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="BoysLove"> Boys Love</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Comedy"> Comedy</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Drama"> Drama</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Fantasy"> Fantasy</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="GirlsLove"> Girls Love</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Gourmet"> Gourmet</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Horror"> Horror</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Mystery"> Mystery</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Romance"> Romance</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Sci-Fi"> Sci-Fi</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="SliceofLife"> Slice of Life</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Sports"> Sports</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Supernatural"> Supernatural</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="genres[]" value="Suspense"> Suspense</label></li>
+                  </ul>
+                    
+                            </div>
+                
+            
+            
+              <div class="col-sm-5 col-sm-6 col-12">
+              <div class="dropdown">
+                  <button  class="btn btn-primary dropdown-toggle-split" type="button" id="themeDropdownButton" data-bs-toggle="dropdown" aria-expanded="false" >
+                      Themes
+                  </button>
+                  <ul class="dropdown-menu theme-dropdown-menu p-3" aria-labelledby="themeDropdownButton" >
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Adult Cast"> Adult Cast</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Anthropomorphic"> Anthropomorphic</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="CGDCT"> CGDCT</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Childcare"> Childcare</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Combat Sports"> Combat Sports</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Crossdressing"> Crossdressing</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Delinquents"> Delinquents</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Detective"> Detective</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Educational"> Educational</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Gag Humor"> Gag Humor</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Gore"> Gore</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Harem"> Harem</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="HighStakesGame"> High Stakes Game</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Historical"> Historical</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="IdolsFemale"> Idols (Female)</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="IdolsMale"> Idols (Male)</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Isekai"> Isekai</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Iyashikei"> Iyashikei</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="LovePolygon"> Love Polygon</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="LoveStatusQuo"> Love Status Quo</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="MagicalSexShift"> Magical Sex Shift</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="MahouShoujo"> Mahou Shoujo</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="MartialArts"> Martial Arts</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Mecha"> Mecha</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Medical"> Medical</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Military"> Military</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Music"> Music</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Mythology"> Mythology</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="OrganizedCrime"> Organized Crime</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="OtakuCulture"> Otaku Culture</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Parody"> Parody</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="PerformingArts"> Performing Arts</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Pets"> Pets</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Psychological"> Psychological</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Racing"> Racing</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Reincarnation"> Reincarnation</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="ReverseHarem"> Reverse Harem</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Samurai"> Samurai</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="School"> School</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Showbiz"> Showbiz</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Space"> Space</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="StrategyGame"> Strategy Game</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="SuperPower"> Super Power</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Survival"> Survival</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="TeamSports"> Team Sports</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="TimeTravel"> Time Travel</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="UrbanFantasy"> Urban Fantasy</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Vampire"> Vampire</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="VideoGame"> Video Game</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="Villainess"> Villainess</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" value="VisualArts"> Visual Arts</label></li>
+                      <li><label class="dropdown-item"><input type="checkbox" name="theme" data-value="Workplace"> Workplace</label></li>
+                  </ul>
+                  <input type="hidden" name="theme" id="selectedTheme">
+              </div></div>
+              
+              <div >
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle-split " type="button" id="dropdownTypeButton" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    Type
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownTypeButton">
+                    <li><a class="dropdown-item" href="#" name="type" data-value="TV">TV Show</a></li>
+                    <li><a class="dropdown-item" href="#" name="type" data-value="Movie">Movie</a></li>
+                    <li><a class="dropdown-item" href="#" name="type" data-value="Special">Special</a></li>
+                    <li><a class="dropdown-item" href="#" name="type" data-value="OVA">OVA</a></li>
+                    <li><a class="dropdown-item" href="#" name="type" data-value="ONA">ONA</a></li>
+                    <li><a class="dropdown-item" href="#" name="type" data-value="Music">Music</a></li>
+                </ul>
+            </div></div>
+            <input type="hidden" name="type" id="selectedType">
+         </div></div>
+            </div>
+
+            <div class="container  ">
+                <div class="row "> <!-- Centers in the row --> 
+                    <div class=" text-center mt-sm-5 mt-0 d-flex flex-sm-row flex-column justify-content-center gap3"> <!-- Adjusts column width -->
+                        <div class=""> 
+            <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle-split" type="button" id="dropdownDemographicsButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Demographics
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownDemographicsButton">
+                <li><a class="dropdown-item" href="#" data-value="none">Demographics</a></li>
+                <li><a class="dropdown-item" href="#" name="Demographics" data-value="Josei">Josei</a></li>
+                <li><a class="dropdown-item" href="#" name="Demographics" data-value="Kids">Kids</a></li>
+                <li><a class="dropdown-item" href="#" name="Demographics" data-value="Seinen">Seinen</a></li>
+                <li><a class="dropdown-item" href="#" name="Demographics" data-value="Shoujo">Shoujo</a></li>
+                <li><a class="dropdown-item" href="#" name="Demographics" data-value="Shounen">Shounen</a></li>
+            </ul>
+        </div></div>
+        <input type="hidden" name="Demographics" id="selectedDemographics">
+        <div class=""> 
+        <button type="submit" id="letsgo" class="btn btn-primary btn-lg icon fw-bolder " style="width: 200px;" >Let's <br> Go</button> </div>
+
+            <div class="">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle-split" type="button" id="dropdownRatingButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Rating
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownRatingButton" >
+                  <li><a class="dropdown-item" href="#" data-value="none">Rating</a></li>
+                  <li><a class="dropdown-item" href="#" name="rating" data-value="g">G - All Ages</a></li>
+                  <li><a class="dropdown-item" href="#" name="rating" data-value="pg">PG - Children</a></li>
+                  <li><a class="dropdown-item" href="#" name="rating" data-value="pg13">PG-13 - Teens 13 or older</a></li>
+                  <li><a class="dropdown-item" href="#" name="rating" data-value="r17">R - 17+ (violence & profanity)</a></li>
+                  <li><a class="dropdown-item" href="#" name="rating" data-value="r">R+ - Mild Nudity</a></li>
+                  
+              </ul>
+          </div></div>
+          <!-- Hidden Input for Rating -->
+          <input type="hidden" name="rating" id="selectedRating">
+        </div></div></div>
+        <!--Search Recommended-->
+        <div class="mt-sm-4 mt-0">
+            
+        <form action="/results" id="myform" method="post" class="container ">
+            <div class="search-bar-container">
+                <label for="searchrelated" class="form-label"></label>
+                <div class="input-group  mx-auto ">
+                    
+                    <input type="text" class="form-control" placeholder="or Enter an Anime you LIKE :3" aria-label="Search" name="searchrelated" id="searchrelated"  >
+                    <button type="submit" class="btn btn-primary" id="searchletsgo">Let's Go</button>
+                </div>
+            </div>
+        </form>
+</div>
+        <div class="container-fluid">
+            
+            <div class="d-flex flex-md-row flex-column justify-content-around align-items-center px-3" style="width: 100%;">
+        
+                <!-- Left Side: Label + Min & Max Dropdowns -->
+                <div class=  "d-flex flex-column align-items-center gap-1">
+        
+            <!-- Max Score Dropdown -->
+          <div class="dropdown gap-1 ">
+            <button class="btn btn-primary dropdown-toggle-split" type="button" id="maxScoreButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Max Rating
+            </button>
+            <ul class="dropdown-menu max-dropdown-menu" aria-labelledby="maxScoreButton">
+                <li><a class="dropdown-item" href="#" data-value="none">Max Rating</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="10">(10) Masterpiece</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="9">(9) Great</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="8">(8) Very Good</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="7">(7) Good</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="6">(6) Fine</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="5">(5) Average</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="4">(4) Bad</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="3">(3) Very Bad</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="2">(2) Horrible</a></li>
+                <li><a class="dropdown-item" href="#" name="maxscore" data-value="1">(1) Appalling</a></li>
+            </ul></div>
+        </div>
+    
+        <!-- Hidden Input for Max Score -->
+        <input type="hidden" name="maxscore" id="selectedMaxScore">         
+
+            <!-- Rating Score (Min-Max) -->
+            <div class="dropdown  ">
+              <button class="btn btn-primary dropdown-toggle-split" type="button" id="minScoreButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Min Rating
+              </button>
+              <ul class="dropdown-menu min-dropdown-menu" aria-labelledby="minScoreButton">
+                <li><a class="dropdown-item" href="#" data-value="none">Min Rating</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="10">(10) Masterpiece</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="9">(9) Great</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="8">(8) Very Good</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="7">(7) Good</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="6">(6) Fine</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="5">(5) Average</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="4">(4) Bad</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="3">(3) Very Bad</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="2">(2) Horrible</a></li>
+                  <li><a class="dropdown-item" href="#" name="minscore" data-value="1">(1) Appalling</a></li>
+              </ul>
+          </div>
+      
+          <!-- Hidden Input for Min Score -->
+          <input type="hidden" name="minscore" id="selectedMinScore">
+
+
+          <div class="episodesfont" class="form-check form-check-reverse  d-flex justify-content-center align-items-center">
+          <label class="form-check-label me-2" for="episodes" >Under 13 Episodes </label>
+            <input class="form-check-input " type="checkbox"  name="episodes" id="episodes" value="true">     
+      </div>   
+          <div class="mb-3 ">
+            <label for="year" class="form-label"></label>
+            <input type="number" name="year" id="year" class="form-control form-control-sm" min="1917" max="2030" placeholder="Enter Year">
+        </div>
+    </div></div></div> 
+
+  </form>
+ 
+ 
+  <footer style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px 0; width: 100%; background-color: #222; color: white;">
+    <p style="margin-bottom: 10px; font-weight: 200;">&copy; <span id="current-year"></span> rANdIME. All Rights Reserved.</p>
+    
+    <nav style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+        <a  href="/" class="bottomhalf" style="color: #FF6680; text-decoration: none; font-size: 20px; margin:0px 15px">rANdIME</a>
+        <a href="/about" style="color: #6fd1ad; text-decoration: none; font-size: 16px;margin:0px 15px">About/Instructions</a>
+        <a href="/about" style="color: #676de2; text-decoration: none; font-size: 16px;margin:0px 15px">Contact</a>
+        
+        <!-- Random Anime Button aligned with other links -->
+        <form action="/results" method="POST" style="display: inline;">
+            <button type="submit" name="randomButton" value="true" class="btn btn-secondary btn-lg randombottom" style="background: none; border: none; color: #c2d62c; font-size: 16px; padding: 0; cursor: pointer;">
+                Random
+            </button>
+        </form>
+    </nav>
+</footer>
+
+
+
+  <%- include("partials/footer.ejs") %>
