@@ -1,0 +1,217 @@
+
+<script>
+    // Auto-hide alert after 5 seconds
+    setTimeout(function () {
+      let alert = document.getElementById("errorAlert");
+      if (alert) {
+        alert.classList.remove("show");
+        alert.classList.add("fade");
+        setTimeout(() => alert.remove(), 500);
+      }
+    }, 5000);
+  </script>
+
+<script>
+    function validateSearchForm(event) {
+      const searchrelated = document.getElementById("searchrelated").value.trim();
+      
+      // Check if the input is empty
+      if (!searchrelated) {
+        // Prevent the form from being submitted
+        event.preventDefault();
+  
+        // Show a custom error message (you could also create a div for this instead of an alert)
+        alert("Please enter a valid anime name.");
+        
+        return false; // Return false to prevent form submission
+      }
+  
+      return true; // Proceed with form submission if valid
+    }
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Function to handle dropdown
+        function setupDropdown(dropdownClass, buttonId) {
+            const dropdownMenu = document.querySelector(`.${dropdownClass}`);
+            const dropdownButton = document.getElementById(buttonId);
+
+            // Prevent dropdown from closing when clicking inside
+            dropdownMenu.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+
+            // Update button text when checkboxes are selected
+            const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    let selected = [];
+                    checkboxes.forEach(cb => {
+                        if (cb.checked) {
+                            selected.push(cb.value);
+                        }
+                    });
+
+                    // Change button text based on selected options
+                    if (selected.length > 2) {
+                        dropdownButton.textContent = `${selected.length} selected`;
+                    } else {
+                        dropdownButton.textContent = selected.length > 0 ? selected.join(", ") : (buttonId === "genreDropdownButton" ? "Genres" : "Themes");
+                    }
+                });
+            });
+        }
+
+        // Apply to both Genre and Theme dropdowns
+        setupDropdown("genre-dropdown-menu", "genreDropdownButton");
+        setupDropdown("theme-dropdown-menu", "themeDropdownButton");
+
+    });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+      // Rating Dropdown
+      const ratingItems = document.querySelectorAll('#dropdownRatingButton + .dropdown-menu .dropdown-item');
+      const ratingButton = document.getElementById('dropdownRatingButton');
+      const hiddenRatingInput = document.getElementById('selectedRating');
+      
+      ratingItems.forEach(item => {
+          item.addEventListener('click', function() {
+              const selectedValue = item.getAttribute('data-value');
+              ratingButton.textContent = item.textContent; // Update button text
+              hiddenRatingInput.value = selectedValue; // Set the selected value in the hidden input
+          });
+      });
+
+      // Type Dropdown
+      const typeItems = document.querySelectorAll('#dropdownTypeButton + .dropdown-menu .dropdown-item');
+      const typeButton = document.getElementById('dropdownTypeButton');
+      const hiddenTypeInput = document.getElementById('selectedType');
+      
+      typeItems.forEach(item => {
+          item.addEventListener('click', function() {
+              const selectedValue = item.getAttribute('data-value');
+              typeButton.textContent = item.textContent; // Update button text
+              hiddenTypeInput.value = selectedValue; // Set the selected value in the hidden input
+          });
+      });
+      // Type Demographics
+      const demographicsItems = document.querySelectorAll('#dropdownDemographicsButton + .dropdown-menu .dropdown-item');
+          const demographicsButton = document.getElementById('dropdownDemographicsButton');
+          const hiddenDemographicsInput = document.getElementById('selectedDemographics');
+          
+          demographicsItems.forEach(item => {
+              item.addEventListener('click', function() {
+                  const selectedValue = item.getAttribute('data-value');
+                  demographicsButton.textContent = item.textContent; // Update button text
+                  hiddenDemographicsInput.value = selectedValue; // Set the selected value in the hidden input
+              });
+          });
+          
+          // Handle Min Score dropdown selection
+          const minScoreItems = document.querySelectorAll('#minScoreButton + .dropdown-menu .dropdown-item');
+          const minScoreButton = document.getElementById('minScoreButton');
+          const hiddenMinScoreInput = document.getElementById('selectedMinScore');
+
+          minScoreItems.forEach(item => {
+              item.addEventListener('click', function() {
+                  const selectedValue = item.getAttribute('data-value');
+                  minScoreButton.textContent = item.textContent; // Update button text
+                  hiddenMinScoreInput.value = selectedValue; // Set the selected value in the hidden input
+              });
+          });
+
+          // Handle Max Score dropdown selection
+          const maxScoreItems = document.querySelectorAll('#maxScoreButton + .dropdown-menu .dropdown-item');
+          const maxScoreButton = document.getElementById('maxScoreButton');
+          const hiddenMaxScoreInput = document.getElementById('selectedMaxScore');
+
+          maxScoreItems.forEach(item => {
+              item.addEventListener('click', function() {
+                  const selectedValue = item.getAttribute('data-value');
+                  maxScoreButton.textContent = item.textContent; // Update button text
+                  hiddenMaxScoreInput.value = selectedValue; // Set the selected value in the hidden input
+              });
+          });
+  });
+</script>
+
+<script>
+  // Add event listener to the specific dropdown for 'minScoreButton'
+  document.getElementById('minScoreButton').addEventListener('click', function () {
+      // Wait until the dropdown is shown to add event listeners to its items
+      setTimeout(() => {
+          // Add event listener for selecting an option inside the dropdown
+          document.querySelectorAll('#minScoreButton + .dropdown-menu .dropdown-item').forEach(function (item) {
+              item.addEventListener('click', function (event) {
+                  // Extract the numeric value from the selected item
+                  var selectedText = event.target.textContent;
+                  var numericValue = selectedText.split(' ')[0]; // Get the first part, e.g., "10"
+
+                  // Update the button text with the numeric value
+                  document.getElementById('minScoreButton').textContent = numericValue;
+              });
+          });
+      }, 10);
+  });
+
+  document.getElementById('maxScoreButton').addEventListener('click', function () {
+      // Wait until the dropdown is shown to add event listeners to its items
+      setTimeout(() => {
+          // Add event listener for selecting an option inside the dropdown
+          document.querySelectorAll('#maxScoreButton + .dropdown-menu .dropdown-item').forEach(function (item) {
+              item.addEventListener('click', function (event) {
+                  // Extract the numeric value from the selected item
+                  var selectedText = event.target.textContent;
+                  var numericValue = selectedText.split(' ')[0]; // Get the first part, e.g., "10"
+
+                  // Update the button text with the numeric value
+                  document.getElementById('maxScoreButton').textContent = numericValue;
+              });
+          });
+      }, 10);
+  });
+
+
+  document.getElementById('dropdownRatingButton').addEventListener('click', function () {
+      // Wait until the dropdown is shown to add event listeners to its items
+      setTimeout(() => {
+          // Add event listener for selecting an option inside the dropdown
+          document.querySelectorAll('#dropdownRatingButton + .dropdown-menu .dropdown-item').forEach(function (item) {
+              item.addEventListener('click', function (event) {
+                  // Extract the numeric value from the selected item
+                  var selectedText = event.target.textContent;
+                  var numericValue = selectedText.split(' ')[0]; // Get the first part, e.g., "10"
+
+                  // Update the button text with the numeric value
+                  document.getElementById('dropdownRatingButton').textContent = numericValue;
+              });
+          });
+      }, 10);
+  });
+</script>
+
+<script>
+    document.getElementById("resubmitBtn").addEventListener("click", function() {
+      location.reload();
+    });
+  </script>
+
+<script>
+    // Get the current year using JavaScript
+    const currentYear = new Date().getFullYear();
+
+    // Insert the year into the span with id="current-year"
+    document.getElementById('current-year').textContent = currentYear;
+</script>
+
+  <script src="index.js" charset="UTF-8" ></script>  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
+
+</body>
+</html>

@@ -1,0 +1,1377 @@
+* {
+  scroll-behavior: smooth;
+
+      font-family: "DM Sans", sans-serif !important; 
+
+}
+
+
+@keyframes darkGlow {
+  0% { text-shadow: 0 0 20px #c9d85a, 0 0 30px #cfdb74; }  /* Light Green */
+  20% { text-shadow: 0 0 30px #67c9a5, 0 0 40px #7bc9ac; } /* Teal */
+  40% { text-shadow: 0 0 40px #82b8cf, 0 0 50px #87c0d8; } /* Light Blue */
+  60% { text-shadow: 0 0 50px #6f74d8, 0 0 60px #8e92da; } /* Soft Purple */
+  80% { text-shadow: 0 0 60px #be7191, 0 0 70px #b6577e; } /* Pinkish */
+  100% { text-shadow: 0 0 70px #e6f847, 0 0 80px #b9cc0e; } /* Grayish White */
+}
+.icon{
+  font-family: "Anta", sans-serif !important;
+}
+
+.border-bottom{
+  color: none;
+}
+
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0; 
+  padding: 0;
+  z-index: -1;
+}
+
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+a.text-decoration-none:hover {
+  color: #FF6680 !important; /* Change to your desired hover color */
+  
+}
+
+.nav-link:hover {
+  color: #C69DAE !important;  /* Darker hover color */
+}
+
+.nav-item a[href="/"]:hover {
+  color: #5C6AFF !important;  /* Darker hover color */
+}
+
+.nav-item a[href="/about"]:hover {
+  color: #A2CFB9 !important;  /* Darker hover color */
+}
+
+/* Active Nav-Link */
+.nav-link.active { 
+  background: none !important;  /* Active button color */
+
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .headerbuttoncolor {
+      background-color: #DFDEDB !important;
+    }
+
+/* Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  
+}
+
+/* Track (Background of Scrollbar) */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffffff80, #bbbbbb80); 
+  border-radius: 12px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffffffcc, #bbbbbbcc); 
+}
+
+
+.search-bar-container {
+  width: 400px; /* Default width */
+  transition: width 0.3s ease-in-out; /* Smooth shrinking */
+}
+
+
+/* Custom width for the search bar */
+#searchrelated {
+  width: 50% !important; /* You can adjust this value to any percentage or px value */
+  max-width: 500px; /* Limit the max width if you want to prevent it from being too large */
+}
+
+.input-group .btn {
+  height: 100%; /* Make the button height match the input */
+  padding: 0.375rem 1rem; /* Adjust padding for the button */
+}
+
+
+#searchrelated {
+  border-radius: 10px 0 0 10px; /* Rounded corners for the left side */
+  background-color: rgba(223, 222, 219,0.8);
+  width: 100%; /* Full width on small screens */
+  max-width: 500px; /* Max width for large screens */
+  margin-bottom: 20px;
+}
+
+#searchletsgo {
+  border-radius: 0 10px 10px 0; /* Rounded corners for the right side */
+  
+  background-color: #4D5C7D !important;
+}
+
+#genreDropdownButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 65px;
+  width: 300px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.5) !important ;
+  border-color: #B4CDD6;
+  color: #242E3A;
+  font-weight: 600;
+  border-width: 4px;
+}
+
+#genreDropdownButton:hover {
+  background-color:  rgba(223, 222, 219, 0.5); /* Slightly darker on hover */
+  border-color: #242E3A; /* Change border on hover */
+}
+
+.genre-dropdown-menu {
+  width: 100%; /* Set the width of the dropdown to match the button */
+  max-width: 300px; /* Ensure the dropdown menu doesn't exceed the button's width */
+  overflow-y: auto; /* Allow scrolling for longer lists */
+  max-height: 400px; /* Limit the height to avoid excessive scrolling */
+  
+}
+
+.genre-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Darken the background on hover */
+  color: black; /* Change text color to white */
+}
+
+#themeDropdownButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 65px;
+  width: 300px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.6) !important ;
+  border-color: #A2C6B9; 
+  color: #3A3825;
+  font-weight: 600;
+  border-width: 4px;
+  
+}
+
+#themeDropdownButton:hover {
+  background-color:  rgba(223, 222, 219, 0.8) !important; /* Slightly darker on hover */
+  border-color: #242E3A; /* Change border on hover */
+}
+.theme-dropdown-menu {
+  width: 100%; /* Set the width of the dropdown to match the button */
+  max-width: 300px; /* Ensure the dropdown menu doesn't exceed the button's width */
+  overflow-y: auto; /* Allow scrolling for longer lists */
+  max-height: 400px; /* Limit the height to avoid excessive scrolling */
+  
+}
+
+.theme-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Darken the background on hover */
+  color: black; /* Change text color to white */
+}
+
+#dropdownTypeButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 65px;
+  width: 300px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.5) !important ;
+  border-color: #CCCDE1;
+  color: #242E3A;
+  font-weight: 600;
+  border-width: 4px;
+}
+
+#dropdownTypeButton:hover {
+  background-color:  rgba(223, 222, 219, 0.4); /* Slightly darker on hover */
+  border-color: #242E3A; /* Change border on hover */
+}
+
+.dropdown-menu {
+  width: 100%; /* Set the width of the dropdown to match the button */
+  max-width: 300px; /* Ensure the dropdown menu doesn't exceed the button's width */
+  overflow-y: auto; /* Allow scrolling for longer lists */
+  max-height: 400px; /* Limit the height to avoid excessive scrolling */
+  
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Darken the background on hover */
+  color: black; /* Change text color to white */
+}
+
+#dropdownDemographicsButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 65px;
+  width: 300px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.5) !important ;
+  border-color: #C9D18F;
+  color: #242E3A;
+  font-weight: 600;
+  border-width: 4px;
+}
+
+#dropdownDemographicsButton:hover {
+  background-color:  rgba(223, 222, 219, 0.4) !important; /* Slightly darker on hover */
+  border-color: #242E3A; /* Change border on hover */
+}
+
+#dropdownRatingButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 65px;
+  width: 300px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.5) !important ;
+  border-color: #C69DAE;
+  color: #242E3A;
+  font-weight: 600;
+  border-width: 4px;
+}
+
+#dropdownRatingButton:hover {
+  background-color:  rgba(223, 222, 219, 0.4) !important; /* Slightly darker on hover */
+  border-color: #242E3A; /* Change border on hover */
+}
+
+#letsgo{
+  background: none;
+  border: none;
+  color: #111214;
+  font-weight: 900 !important;
+  font-size: 30px !important;
+  box-shadow: 0 0 10px 5px #2e51a2(0, 0, 0, .7);
+  width: 100%; /* Full width on mobile */
+  padding: 10px;
+  padding-bottom: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#letsgo:hover{
+  
+  color: rgb(243, 235, 235);
+  animation: darkGlow 3s infinite alternate;
+}
+
+#maxScoreButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 160px !important;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.2) !important ;
+  border-color: #B4CDD6;
+  color: #242E3A;
+  border-width: 4px;
+  font-weight: 600;
+}
+
+#maxScoreButton:hover {
+  background-color:  rgba(223, 222, 219, 0.4); /* Slightly darker on hover */
+  border-color: #242E3A; /* Change border on hover */
+}
+
+.max-dropdown-menu {
+  width: 100% !important; 
+  max-width: 160px !important; 
+  overflow-y: auto; 
+  max-height: 400px; 
+}
+
+
+.max-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important; 
+  color: white !important; 
+}
+
+#minScoreButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 160px !important;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.2) !important ;
+  border-color: #CCCDE1;
+  color: #242E3A;
+  border-width: 4px;
+  font-weight: 600;
+}
+
+#minScoreButton:hover {
+  background-color:  rgba(223, 222, 219, 0.4); 
+  border-color: #242E3A; 
+}
+
+.min-dropdown-menu {
+  width: 100% ; 
+  max-width: 160px !important ; 
+  overflow-y: auto; 
+  max-height: 400px; 
+}
+
+
+.min-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: white !important;
+}
+
+
+#scorelabel{
+  font-size: 30px ;
+  margin-left: 0;
+  color: #242E3A !important;
+}
+
+.form-check-label{
+  font-size: 25px !important;
+}
+
+#episodes {
+  width: 25px !important;
+  height: 25px !important;
+  
+}
+.episodesfont{
+ color: #242E3A !important;
+ font-weight: 600;
+}
+
+#year {
+  font-size: 12px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 125px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(223, 222, 219, 0.2) !important ;
+  border-color: #242E3A;
+  color: #242E3A;
+  border-width: 2px;
+}
+
+
+#year:focus {
+  border-color: #9FA055 !important; 
+  box-shadow: 0 0 20px rgba(162, 198, 185, 0.75) !important; 
+  outline: none !important; 
+}
+
+input[type="checkbox"] {
+  appearance: none; 
+  -webkit-appearance: none; 
+  outline: none; 
+  border: 2px solid #8FD64E; 
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  background-color: white; 
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* When checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: #95DC4F;
+  border-color: #95DC4F; 
+}
+input[type="checkbox"]:checked {
+  background-color: #95DC4F;
+  border-color: #95DC4F !important; 
+}
+
+
+input[type="checkbox"]:focus {
+  outline: none; 
+  box-shadow: 0 0 10px 3px rgba(77, 92, 125, 0.6); /* Custom purple focus glow */
+  border-color: #4D5C7D;
+}
+
+.containerall {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the screen */
+  overflow: hidden; /* Prevents content from going out of the screen */
+}
+
+.randomButton{
+  background: none;
+  border: none;
+}
+
+.pageResult{
+  margin: 0;
+  min-height: 100vh;
+  overflow: auto;
+    padding: 0;
+}
+
+
+#root{
+  margin: 0;
+  padding: 0;
+}
+.banner{
+    
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 20px;
+    box-shadow: rgba(28, 28, 28, 0.75) 0px 0px 0px 2000px inset;
+    
+}
+.pageResult, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.repeat-bg {
+  background-repeat: repeat !important;
+  background-size: auto;
+}
+.rowstyle, .resultbcolor, .blur-container, .blurbanner, .fulldetails-container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.blurbanner{
+  align-items: center;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  min-height: 550px;
+  position: relative;
+  width: 100%;
+}
+
+.animeCover {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, .5);
+  margin-bottom: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 300px;
+  height: 450px;
+}
+.blur-details {
+  align-items: center;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  margin-top: -20%;
+  position: relative;
+  width: 100%;
+  
+}
+
+.fulldetails-container {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  max-height: 285px;
+  max-width: 425px;
+  text-align: center;
+  width: 100%;
+}
+
+.details-container {
+  align-items: flex-start;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px solid  black;
+}
+
+.text-container {
+  flex-grow: 1;
+  max-width: 315.69px;
+  text-align: left;
+}
+
+.ratingContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-width: 120px;
+}
+.resultbcolor{
+background: #DFDEDB;
+}
+.scorecolor{
+  background-color: #2e51a2;
+  border-radius: 2px;
+  color: #e0e0e0;
+  content: attr(data-title);
+  display: block;
+  font-size: 10px;
+  font-weight: 400; 
+  padding: 2px 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 6px;
+  width: 60px;
+  margin-bottom: 0;
+}
+.scorenumber {
+  
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+ 
+  position: relative;
+  text-align: center;
+  width: 60px;
+}
+.rankednumber{
+  font-size: 20px;
+  font-weight: 600;
+ 
+  position: relative;
+  text-align: center;
+}
+.divider {
+  gap: 20px;
+  width: 2px; /* Thin vertical line */
+  background-color: black; /* Black line */
+  min-height: 100%; /* Ensure it stretches */
+  height: auto; /* Adjust based on content */
+  align-self: stretch; /* Makes it take full height */
+}
+.trailerBb{
+border-bottom: 2px solid black;
+}
+
+.well {
+  text-align: left; /* Ensures text aligns to the left */
+  padding-left: 20px; /* Adjust as needed */
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns video to the left */
+  width: 100%;
+  max-width: 836px; /* Restrict width for better alignment */
+  margin-right: 20px; /* Matches the padding of .well */
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  z-index: 2;
+  
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.well, .synopsis-container {
+  width: 100%;
+  max-width: 900px; /* Ensures they have the same width */
+  margin: 0 auto 20px; /* Centers them and ensures spacing */
+  padding-left: 20px; /* Ensures both start at the same position */
+}
+
+.list-group{
+  border: 2px solid black !important;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, .4);
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.banner {
+  position: relative;
+  width: 100vw;  /* Full screen width */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;  /* Ensures it's centered */
+  left: 50%;
+  transform: translateX(-50%);  /* Centers it properly */
+  display: block;
+}
+
+#root, .pageResult {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+
+footer {
+  width: 100%;
+  padding: 15px;
+  background: #222;
+  color: white;
+  text-align: center;
+  
+}
+.boxshadow{
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, .3);
+}
+
+.about{
+background-color: #DFDEDB ;
+width: 100vw;
+height: 100%;
+padding: 0;
+margin: 0;
+height: 100%;
+margin: 0;
+display: flex;
+flex-direction: column;
+}
+
+.allandkirby{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  height: 100px; gap: 20px;
+}
+.text320-1{
+  font-size: 22px !important; padding-top: 0 !important;
+}
+.randombottom{
+  margin:0px 15px;
+}
+header {
+  align-items: baseline; /* Ensures all items align by text baseline */
+}
+.custom-border {
+  border: 2px solid black !important;  /* Adjust the size as needed */
+}
+
+.nobtm{
+  border-bottom: none !important;
+}
+html{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+ 
+
+#errorAlert {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Ensure that the dropdowns are aligned evenly and won't shift at 1200px breakpoint */
+@media screen and (max-width: 1200px) {
+  .row {
+      justify-content: center !important; /* Center the row's contents */
+  }
+
+  .text-center {
+      display: flex !important;
+      justify-content: center !important; /* Keeps everything centered */
+      gap: 20px !important; /* Adjust spacing between the dropdowns */
+  }
+
+  .dropdown {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important; /* Ensures that the dropdowns are centered */
+  }
+
+  /* Ensure the genres dropdown doesn't shift position */
+  .dropdown button {
+      width: 100% !important; /* Make the buttons take full width */
+  }
+  #letsgo {
+    width: 100% !important; /* Make 'Let's Go' button full width */
+    max-width: 200px !important; /* Restrict to a max width if needed */
+}
+}
+
+/* Tablet (landscape) */
+@media screen and (max-width: 1024px) {
+  #searchrelated {
+    width: 60% !important;
+  }
+
+  #scorelabel {
+    font-size: 28px;
+    margin-left: 50px;
+  }
+  
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  #letsgo {
+    font-size: 22px;
+  }
+
+
+.animeCover {
+  width: 250px;
+  height: 375px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#scorelabel {
+  font-size: 18px;
+}
+
+/* Dropdown buttons adjustments */
+#genreDropdownButton,
+#themeDropdownButton,
+#dropdownTypeButton,
+#dropdownDemographicsButton,
+#dropdownRatingButton {
+  width: 90%;
+  font-size: 16px;
+}
+
+/* Make the search input take full width */
+#searchrelated {
+  width: 80%;
+}
+
+.video-container iframe {
+  height: 320px;
+}
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  #searchrelated {
+    width: 50% !important;
+    max-width: 500px;
+  }
+
+  #scorelabel {
+    font-size: 20px;
+    
+  }
+
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton {
+    width: 300px;
+  }
+
+
+.animeCover {
+  width: 350px;
+  height: 525px;
+}
+
+#scorelabel {
+  font-size: 20px;
+}
+
+.video-container iframe {
+  height: 420px;
+}
+
+.synopsis-container, .well {
+  width: 75%;
+}
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+  
+  #searchrelated {
+    width: 100% !important; 
+    max-width: 100%;
+    margin: 0 auto; 
+  }
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton 
+  {
+    width: 100%; 
+    font-size: 18px; 
+    margin-bottom: 10px; 
+    padding: 15px 20px; 
+  }
+  #minScoreButton,
+  #maxScoreButton,
+  .form-check-label {
+    font-size: 14px !important;
+    
+  }
+
+  /* Smaller font for the search button */
+  #letsgo {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  /* Adjust the label font size */
+  #scorelabel {
+    font-size: 20px;
+    margin-left: 10px; /* Remove large left margin */
+  }
+
+  /* Reduce the size of other input fields */
+  #year, input[type="checkbox"] {
+    font-size: 16px; /* Make it easier to read */
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px; /* Add space below */
+  }
+
+  /* Adjust checkbox styles */
+  input[type="checkbox"] {
+    width: 25px; /* Larger checkbox */
+    height: 25px;
+    margin: 10px 0; /* Add space around the checkbox */
+  }
+
+  /* Stack the dropdown menus vertically */
+  .dropdown-menu {
+    width: 100%; /* Full width on mobile */
+    max-height: 250px; /* Limit the height */
+  }
+
+  /* Adjust form labels and input text */
+  .form-check-label {
+    font-size: 20px !important; /* Make label font smaller */
+  }
+
+  /* Adjust video trailer for mobile */
+  .trailer-container {
+    padding-bottom: 75%; /* Make video container taller to keep 16:9 aspect ratio */
+  }
+
+  /* General layout adjustments */
+  .input-group .btn {
+    width: 100%; /* Full width button */
+    height: auto; /* Adjust height for mobile */
+    margin-left: 2px !important;
+    border-radius: 10px 0 0 10px !important;
+  }
+  .animeCover {
+    width: 150px;
+    height: 225px;
+  }
+
+  #scorelabel {
+    font-size: 14px;
+  }
+
+  .details-container {
+    flex-direction: column; /* Stack details */
+    
+  }
+
+  .ratingContainer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .video-container iframe {
+    height: 220px;
+  }
+
+  /* Stacked buttons for dropdowns */
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton {
+    width: 100%;
+    font-size: 14px;
+    height: auto;
+  }
+
+  .well, .synopsis-container {
+    width: 100%;
+    padding-left: 15px;
+  }
+   
+  .scorecolor, .scorenumber, .rankednumber {
+    width: auto; /* Let the width adjust automatically */
+    margin-bottom: 0; /* Remove unnecessary margins */
+    font-size: 16px;
+  }
+  .animeCover {
+    max-height: 225px;
+     max-width: 150px; /* Adjust the height accordingly */
+    margin-left: 10%; /* Adjust the left margin for better positioning */
+    margin-right: 10%; /* Adjust the right margin to keep it centered */
+  }
+  .blur-details {
+    flex-direction: column;
+}
+.details-container{
+  flex-direction: row; /* Make it horizontal */
+  justify-content: space-between; /* Align it to the left */
+  align-items: center; /* Vertically center items in the container */
+  margin-left: 0;
+  margin-right: 0; 
+}
+.allandkirby{
+  
+  flex-direction: column; 
+  height: auto;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.resultbcolor{
+  height: auto;
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.divider.boxshadow {
+  display: flex; 
+  flex-direction: row; 
+  height: 2px;  
+  width: auto; 
+  background-color: black; 
+  
+}
+#resubmitBtn{
+  margin-left: 10px;
+}
+.mal{
+  margin-right: 6px;
+}
+  
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /* Tablet and small devices */
+  .animeCover {
+    width: 200px;
+    height: 300px;
+  }
+
+  #scorelabel {
+    font-size: 16px;
+  }
+
+  .well, .synopsis-container {
+    width: 90%;
+  }
+
+  .video-container iframe {
+    height: 280px;
+  }
+
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton {
+    width: 100%;
+  }
+  #minScoreButton,
+  #maxScoreButton{
+    font-size: 16px !important;
+  }
+
+  /* Mobile view */
+  #searchrelated {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .form-check-label {
+    font-size: 18px !important;
+  }
+
+  .input-group .btn {
+    
+    height: auto;
+    padding: 0.5rem;
+  }
+  .input-group{
+    margin-bottom: 20px;
+  }
+
+  .trailer-container {
+    padding-bottom: 75%; /* Aspect ratio 16:9 for trailers */
+  }
+
+  .details-container{
+    margin-top: 5px;
+  }
+  .logo-link{
+    padding-right: 20px;
+  }
+  
+}
+@media screen and (max-width: 576px) {
+  .containerall{
+    padding: 0;
+    margin: 0;
+
+  }
+
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton {
+    width: 400px !important;
+    height: 50px ;
+  }
+  #letsgo{
+    margin: 0;
+    padding: 0;
+    font-size: 20px !important;
+  }
+  #dropdownDemographicsButton,
+  #dropdownRatingButton,
+  #genreDropdownButton,
+  #themeDropdownButton
+  {
+    margin: 0;
+  }
+  #dropdownTypeButton{
+    margin-bottom: 16px;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+}
+
+footer nav {
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer nav a, 
+footer nav form {
+    margin: 5px 0; /* Ensures even spacing when stacked */
+}
+.randombottom{
+  margin: 0 !important;
+}
+  
+}
+@media screen and (max-width: 430px){
+  #genreDropdownButton,
+  #themeDropdownButton,
+  #dropdownTypeButton,
+  #dropdownDemographicsButton,
+  #dropdownRatingButton {
+    width: 100% !important;
+    height: 50px ;
+  }
+ #searchrelated{
+  width: 100% !important;
+  height: 50px ;
+  }
+  .search-bar-container{
+    width: 100% !important;
+    padding: 0px 12px;
+
+  }
+  
+}
+@media screen and (max-width: 480px) {
+  
+  .scorecolor, .scorenumber, .rankednumber {
+    font-size: 14px; /* Adjust text size */
+  }
+ 
+
+  .animeCover {
+    width: 150px; /* Further reduce the size */
+    height: 225px; /* Adjust height proportionally */
+    margin-left: 5%;  /* Smaller left margin for tight screen spaces */
+    margin-right: 5%; /* Same for right margin */
+  }
+  .blur-details {
+    flex-direction: column;
+}
+header {
+  flex-direction: column !important;
+  text-align: center;
+}
+header {
+  flex-direction: column !important;
+  text-align: center;
+}
+
+.nav {
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: center;
+}
+
+a, button {
+  display: block;
+  width: 100%;
+}
+.logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+}
+#resubmitBtn{
+  padding-right: 100px;
+}
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .allandkirby {
+    display: flex;
+    flex-direction: column !important; /* Stack elements vertically */
+    align-items: center !important; /* Center the items horizontally */
+    justify-content: center !important; /* Vertically center the content */
+    text-align: center; /* Center text */
+    width: 100%;
+  }
+
+  /* Make sure each of the <a> and <button> items stack vertically as the screen shrinks */
+  .allandkirby a, .allandkirby button {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center; /* Center text and images horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Ensure the text inside the container wraps and is properly resized */
+  .kirbytextsize {
+    font-size: 10px !important; /* Smaller font size for smaller screens */
+    word-wrap: break-word; /* Ensure the text wraps if it’s too long */
+  }
+
+  /* Adjust the size of images for small screens */
+  .imgbt {
+    width: 20px !important; /* Smaller image for mobile */
+    margin-bottom: 5px; /* Give space between text and image */
+  }
+
+  .kirbyimgbt {
+    width: 30px !important; /* Smaller image for mobile */
+    margin-bottom: 5px; /* Give space between text and image */
+  }
+
+  /* Make sure dividers have some spacing and fit inside the layout */
+  .divider.boxshadow {
+    margin: 10px 0; /* Space out dividers */
+    width: 100%; /* Make dividers full width */
+  }
+  #resubmitBtn{
+    margin-left: 40px;
+    
+  }
+  .text320-1{
+    font-size: 15px !important;
+  }
+
+}
+@media screen and (max-width: 178px) {
+#maxScoreButton,
+#minScoreButton,
+.episodesfont,
+#year{
+  width: 100% !important;
+  font-size: 14px !important;
+}
+.episodesfont{
+  display: flex;
+    flex-direction: column !important; /* Stack elements vertically */
+    align-items: center !important; /* Center the items horizontally */
+    justify-content: center !important; /* Vertically center the content */
+    text-align: center; /* Center text */
+    width: 100%;
+}
+
+}
+
+@media screen and (max-width: 685px) {
+  .logo-link{
+    padding-right: 60px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logo-link{
+    padding-right: 20px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .about h1 {
+    font-size: 28px;
+  }
+
+  .about h2 {
+    font-size: 32px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  .about ol {
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 15px;
+  }
+
+  footer a {
+    font-size: 14px;
+  }
+
+  footer form button {
+    font-size: 14px;
+  }
+}
+
+/* From 576px down to 320px */
+@media (max-width: 430px) {
+  .about h1 {
+    font-size: 24px;
+  }
+
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+  .about ol {
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  footer a {
+    font-size: 12px;
+  }
+
+  footer form button {
+    font-size: 12px;
+  }
+}
+
+/* Handle even smaller screens */
+@media (max-width: 178px) {
+  .about h1 {
+    font-size: 16px;
+  }
+
+  .about h2 {
+    font-size: 20px;
+  }
+
+  .about p {
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 5px;
+  }
+
+  footer a {
+    font-size: 10px;
+  }
+
+  footer form button {
+    font-size: 10px;
+  }
+}
