@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import $ from 'jquery';
 import jikanjs from '@mateoaranda/jikanjs';
 import cors from "cors";
-
+import path from "path";
 
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(cors());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.set('views', path.join(__dirname, 'views'));
 
 
 app.get("/", async (req, res) => {
@@ -309,9 +309,6 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
   
-
-  
-
 
 
  
