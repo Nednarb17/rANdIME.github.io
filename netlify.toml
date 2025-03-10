@@ -1,0 +1,7 @@
+[build]
+  functions = "netlify/functions"  # Path to serverless functions
+
+[[redirects]]
+  from = "/{any*}"
+  to = "/.netlify/functions/server"
+  status = 200
