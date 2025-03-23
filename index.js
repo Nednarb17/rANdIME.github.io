@@ -6,7 +6,7 @@ import jikanjs from '@mateoaranda/jikanjs';
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from 'node:url';
-import { handler } from "@netlify/functions";
+
 
 const app = express();
 const port = 3000;
@@ -307,7 +307,7 @@ app.get("/about", (req,res) => {
   res.render("about.ejs");
 });
 
-export { handler as netlifyHandler };
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
