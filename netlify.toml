@@ -1,7 +1,16 @@
 [build]
-  functions = "netlify/functions"  # Path to serverless functions
-
+  command = "mkdir -p ./dist/"
+  publish = "./dist/"
+[functions]
+  external_node_modules = [
+    "ejs",
+    "express"
+  ]
+  included_files = [
+    "./views/**/*"
+  ]
+  node_bundler = "esbuild"
 [[redirects]]
-  from = "/{any*}"
-  to = "/.netlify/functions/server"
+  from = "/*"
   status = 200
+  to = "/.netlify/functions/server/:splat"
