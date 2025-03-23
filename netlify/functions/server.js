@@ -14,12 +14,7 @@ server.set("view engine", "ejs");
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.json());
 
-// Fix __dirname in ES Modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-server.set("views", path.join(process.cwd(), "views"));
-server.use(express.static(path.join(process.cwd(), "public")));
 
 // Routes
 router.get("/", (req, res) => res.render("index", { error: null }));
