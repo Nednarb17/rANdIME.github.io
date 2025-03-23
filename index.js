@@ -6,18 +6,19 @@ import jikanjs from '@mateoaranda/jikanjs';
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from 'node:url';
+import { handler } from "@netlify/functions";
 
 const app = express();
 const port = 3000;
 app.use(cors());
 
 app.set("view engine", "ejs");
-app.use(express.static("/public"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.set('views', path.join(__dirname, '/views/'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.get("/", async (req, res) => {
   res.render("index.ejs",{error: null});
@@ -306,6 +307,7 @@ app.get("/about", (req,res) => {
   res.render("about.ejs");
 });
 
+export { handler as netlifyHandler };
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

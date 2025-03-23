@@ -6,3 +6,5 @@ server.set('view engine', 'ejs')
 router.get('/', (req, res) => res.render('index'))
 server.use('/', router)
 export const handler = serverless(server)
+
+app.use(express.static("public"));
