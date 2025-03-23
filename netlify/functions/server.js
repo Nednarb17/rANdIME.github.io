@@ -53,7 +53,7 @@ const genresMap = {
 
 
 
-  router.post("/results", async (req, res) => {
+  app.post("/results", async (req, res) => {
     try {
       const {
         genres,
@@ -302,7 +302,7 @@ const genresMap = {
     }
     
   });
-  server.use('/results', router)
+  
 
 
 
