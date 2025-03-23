@@ -4,7 +4,9 @@
       font-family: "DM Sans", sans-serif !important; 
 
 }
-
+body {
+  background-color: #dfdedb; /* Or any color that blends with your video */
+}
 
 @keyframes darkGlow {
   0% { text-shadow: 0 0 20px #c9d85a, 0 0 30px #cfdb74; }  /* Light Green */
