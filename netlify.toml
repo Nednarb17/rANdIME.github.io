@@ -1,6 +1,6 @@
 [build]
-  command = "mkdir -p ./dist/"
-  publish = "./dist/"
+  command = "npm install"
+  publish = "public"  
 [functions]
   external_node_modules = [
     "ejs",
