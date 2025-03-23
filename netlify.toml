@@ -1,6 +1,7 @@
 [build]
   command = "npm install"
   publish = "public" 
+  functions = "netlify/functions"
 [functions]
   external_node_modules = [
     "ejs",
@@ -13,4 +14,4 @@
 [[redirects]]
   from = "/*"
   status = 200
-  to = "/.netlify/functions/server/:splat"
+   to = "/.netlify/functions/server"
