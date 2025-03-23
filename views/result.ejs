@@ -1,5 +1,5 @@
 
-<%- include("partials/head") %>
+<%- include("Partials/head") %>
 
 <% let backgroundImage = animebanner[0] && animebanner[0].attributes.coverImage ? 
                      animebanner[0].attributes.coverImage.original : 
@@ -19,7 +19,7 @@
 
 <div id="root">
     <div class="pageResult">
-        <%- include("partials/header") %>
+        <%- include("Partials/header") %>
         <% if (animeEz) { %>
 
         <div class="row rowstyle" style="max-width: 900px; margin: 0px auto 20px; padding: 0px 20px 20px;">
@@ -171,4 +171,4 @@
         </nav>
     </footer>
 
-<%- include("partials/footer") %> 
+<%- include("Partials/footer") %> 
