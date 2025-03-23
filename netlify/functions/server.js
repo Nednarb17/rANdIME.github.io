@@ -5,7 +5,7 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 import serverless from "serverless-http";
-
+import { dirname } from "path";
 const server = express();
 const router = express.Router();
 server.use(cors());
@@ -16,7 +16,7 @@ server.use(express.json());
 
 // Fix __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename)
 
 server.set("views", path.join(__dirname, "../views")); // Adjust path for Netlify Functions
 server.use(express.static(path.join(__dirname, "../public"))); // Ensure static files load
