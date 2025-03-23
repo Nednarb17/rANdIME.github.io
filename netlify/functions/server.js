@@ -16,10 +16,10 @@ server.use(express.json());
 
 // Fix __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename)
+const __dirname = path.dirname(__filename);
 
-server.set("views", path.join(__dirname, "../views")); // Adjust path for Netlify Functions
-server.use(express.static(path.join(__dirname, "../public"))); // Ensure static files load
+server.set("views", path.join(__dirname, "views"));
+server.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 router.get("/", (req, res) => res.render("index", { error: null }));
