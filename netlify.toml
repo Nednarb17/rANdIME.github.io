@@ -1,12 +1,10 @@
 [build]
   command = "mkdir -p ./dist/"
   publish = "./dist/"
-  
-
 [functions]
   external_node_modules = [
     "ejs",
-    "express",
+    "express"
   ]
   included_files = [
     "./views/**/*"
