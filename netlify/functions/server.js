@@ -315,6 +315,3 @@ app.get("/about", (req,res) => {
 });
 
 
-module.exports.handler = async (event, context) => {
-    return app(event, context);
-  };
