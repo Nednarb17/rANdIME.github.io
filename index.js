@@ -6,21 +6,19 @@ import jikanjs from '@mateoaranda/jikanjs';
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from 'node:url';
-import serverless from 'serverless-http';
 
 const app = express();
 const port = 3000;
 app.use(cors());
 
-
-
+app.set("view engine", "ejs");
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.set("view engine", "ejs");
+
 
 app.get("/", async (req, res) => {
   res.render("index.ejs",{error: null});
@@ -309,7 +307,7 @@ app.get("/about", (req,res) => {
   res.render("about.ejs");
 });
 
- module.exports.handler = serverless(app); 
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
@@ -318,4 +316,4 @@ app.listen(port, () => {
 
  
 
- 
+  

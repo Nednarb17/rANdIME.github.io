@@ -1,12 +1,16 @@
 [build]
-  command = "npm run build"  # Adjust the build command if you need it
-  publish = "public"
-
+  command = "mkdir -p ./dist/"
+  publish = "./dist/"
 [functions]
-  directory = "functions"  # Directory where Netlify functions are stored
+  external_node_modules = [
+    "ejs",
+    "express"
+  ]
+  included_files = [
+    "./views/**/*"
+  ]
   node_bundler = "esbuild"
-
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server/:splat"
   status = 200
+  to = "/.netlify/functions/server/:splat"
