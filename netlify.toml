@@ -1,13 +1,12 @@
 [build]
   command = "mkdir -p ./dist/"
-  publish = "./public/"
+  publish = "./dist/"
   
 
 [functions]
   external_node_modules = [
     "ejs",
     "express",
-    "@netlify/functions"
   ]
   included_files = [
     "./views/**/*"
