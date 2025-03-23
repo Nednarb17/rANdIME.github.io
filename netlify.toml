@@ -1,7 +1,7 @@
 [build]
   command = "mkdir -p ./dist/"
   publish = "./dist/"
-  publish = "public"
+  
 
 [functions]
   external_node_modules = [
